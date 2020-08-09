@@ -10,24 +10,20 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject castle = GameObject.Find("Castle");
+        GameObject castle = GameObject.Find("Base");
         if (castle)
+        {
             GetComponent<NavMeshAgent>().destination = castle.transform.position;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider co)
     {
         // If castle then deal Damage
-        if (co.name == "Castle")
+        if (co.name == "Base")
         {
             co.GetComponentInChildren<BaseHealth>().Decrease();
             Pool.ReturnToPool(enemyPrefab);
+            enemyPrefab.Pool.ReturnToPool(enemyPrefab);
         }
     }
 }

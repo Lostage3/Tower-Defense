@@ -15,13 +15,18 @@ public class Enemy : MonoBehaviour
         Debug.Log(monster.AnotherTestNum + " " + monster.go);
     }
 
-   // void OnCollisionEnter(Collision collision)
-   // {
-   //     if(!collision.gameObject.CompareTag("Enemy"))
-   //   {
-   //       Pool.ReturnToPool(this);
-   //   }
-   // }
+    void OnTriggerEnter(Collider co)
+    
+    {
+        if(co.gameObject.name == "Base")
+        {
+            Pool.ReturnToPool(this);
+            if(co.gameObject.GetComponent<BaseHealth>().current() == 0)
+            {
+                Pool.ReturnToPool(this);
+            }
+        }
+    }
 }
 
 [System.Serializable]
