@@ -2,31 +2,33 @@
 
 public class Enemy : MonoBehaviour
 {
+   
     public EnemyPool Pool { get; set; } 
     public Monster monster;
-
     void Start()
     {
+       
         monster = new Monster(5);
         MonsterData monDat = monster.MonsterData;
         monster.MonsterData = monDat;
         monster.TestNum = 5;
         monster = new Monster(6, gameObject);
         Debug.Log(monster.AnotherTestNum + " " + monster.go);
+
     }
+   
 
     void OnTriggerEnter(Collider co)
     
     {
-        if(co.gameObject.name == "Base")
+        if (co.name == "Base")
         {
             Pool.ReturnToPool(this);
-            if(co.gameObject.GetComponent<BaseHealth>().current() == 0)
-            {
-                Pool.ReturnToPool(this);
-            }
+
         }
     }
+
+   
 }
 
 [System.Serializable]
@@ -95,7 +97,6 @@ public class Monster
 public struct MonsterData
 {
     public int Health;
-    public bool IsScary;
     public Vector3 Dir;
 }
 

@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animals\AnimalAim.cs" />
+    <Compile Include="Assets\Scripts\Animals\AnimalAttack.cs" />
     <Compile Include="Assets\Scripts\Animals\AnimalPlace.cs" />
     <Compile Include="Assets\Scripts\Base\BaseHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyPool.cs" />
+    <Compile Include="Assets\Scripts\Extras\SeekSimple.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

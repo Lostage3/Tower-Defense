@@ -7,6 +7,7 @@ public class BaseHealth : MonoBehaviour
 {
     public TextMesh baseHealth;
     public Text Death;
+    
     void Start()
     {
         baseHealth = GetComponent<TextMesh>();
@@ -33,6 +34,7 @@ public class BaseHealth : MonoBehaviour
         {
             Destroy(transform.parent.gameObject);
             Death.text = "You Lose";
+            
         }
     }
 }

@@ -33,6 +33,7 @@ public class EnemyPool : MonoBehaviour
     public Enemy GetNext(Vector3 pos)
     {
         Enemy enemy;
+
         if (enemies.Count > 0)
         {
             enemy = enemies.Pop();
@@ -47,6 +48,7 @@ public class EnemyPool : MonoBehaviour
         enemy.gameObject.SetActive(true);
         enemy.transform.parent = null;
         return enemy;
+
     }
 
     public void ReturnToPool(Enemy enemy)

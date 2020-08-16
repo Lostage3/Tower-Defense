@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
         if (co.name == "Base")
         {
             co.GetComponentInChildren<BaseHealth>().Decrease();
-            Pool.ReturnToPool(enemyPrefab);
+            //Pool.ReturnToPool(enemyPrefab);
             enemyPrefab.Pool.ReturnToPool(enemyPrefab);
         }
     }
