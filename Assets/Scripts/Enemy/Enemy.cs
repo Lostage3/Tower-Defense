@@ -4,99 +4,43 @@ public class Enemy : MonoBehaviour
 {
    
     public EnemyPool Pool { get; set; } 
-    public Monster monster;
-    void Start()
-    {
-       
-        monster = new Monster(5);
-        MonsterData monDat = monster.MonsterData;
-        monster.MonsterData = monDat;
-        monster.TestNum = 5;
-        monster = new Monster(6, gameObject);
-        Debug.Log(monster.AnotherTestNum + " " + monster.go);
+    
+    public int health;
 
+    AnimalAttack attack;
+
+    private void Update()
+    {
+        if(health <= 0)
+        {
+            Pool.ReturnToPool(this);
+            this.health = 100;
+        }
     }
-   
+
+    public void DecreaseHealth(int amount)
+    {
+        if (health > 0)
+        {
+            health -= amount;
+        }
+        else
+        {
+            Pool.ReturnToPool(this);
+            //health = 100;
+        }
+    }
 
     void OnTriggerEnter(Collider co)
-    
+
     {
         if (co.name == "Base")
         {
             Pool.ReturnToPool(this);
 
         }
+       
     }
-
-   
 }
 
-[System.Serializable]
-public class Monster
-{
-    public GameObject go;
-
-    public Monster(int myNum)
-    {
-        AnotherTestNum = myNum;
-    }
-
-    public Monster(int myNum, GameObject go)
-    {
-        AnotherTestNum = myNum;
-        this.go = go;
-    }
-
-    public Monster()
-    {
-    }
-
-    public MonsterData MonsterData
-    {
-        get { return monsterData; }
-        set { monsterData = value; }
-    }
-    MonsterData monsterData;
-
-    public int TestNum
-    {
-        get { return testNum; }
-        set { testNum = value; }
-    }
-    int testNum;
-
-    public int AnotherTestNum { get; }
-
-    public float Bla { get; set; } = 12f;
-    public float Bla2 { get; set; } = 40f;
-
-    [SerializeField] int yetAnotherTestNum = 1;
-    public int YetAnotherTestNum
-    {
-        get => yetAnotherTestNum;
-        set => yetAnotherTestNum = value;
-    }
-
-
-    public void DecreaseHealth(int amount)
-    {
-        monsterData.Health -= amount;
-    }
-
-    //public MonsterData GetMonsterData()
-    //{
-    //    return monsterData;
-    //}
-
-    //public void SetMonsterData(MonsterData md)
-    //{
-    //    monsterData = md;
-    //}
-}
-
-public struct MonsterData
-{
-    public int Health;
-    public Vector3 Dir;
-}
 

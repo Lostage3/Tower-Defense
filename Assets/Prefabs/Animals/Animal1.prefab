@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 45907493167003726}
   - component: {fileID: 3481993199953452757}
   - component: {fileID: 3929633203803851920}
+  - component: {fileID: -5901991093529517587}
   m_Layer: 2
   m_Name: Animal1
   m_TagString: Untagged
@@ -108,3 +109,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 1911854186902872521, guid: 966bbb75cbcda5949974a302424b1f46,
     type: 3}
+--- !u!114 &-5901991093529517587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321440847067845676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756638db53922e14fa39bd666a71cee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - cost: 10
+    visualization: {fileID: 919132149155446097, guid: c76b6db921c2f944bbc08b1c63c2d4ab,
+      type: 3}

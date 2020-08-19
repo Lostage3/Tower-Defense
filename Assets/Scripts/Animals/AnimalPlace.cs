@@ -6,20 +6,46 @@ public class AnimalPlace : MonoBehaviour
 {
     public GameObject AnimalPrefab;
     GameObject animal;
-    bool animalBool;
+   
+
+    private GameManagerBehaviour gameManager;
+
     private void Start()
     {
-        animalBool = false;
+        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
+
+    private bool CanPlaceAnimal()
+    {
+        int cost = AnimalPrefab.GetComponent<AnimalData>().levels[0].cost;
+        return animal == null && gameManager.Food >= cost;
+    }
+
     private void OnMouseUpAsButton()
     {
-        if (animalBool == false)
+        if (CanPlaceAnimal())
         {
             animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
-            //animal.transform.position += new Vector3(transform.position.x,transform.position.y + 5f,transform.position.z);
-            animalBool = true;
-
+            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
-       
+        else if (CanUpgradeAnimal())
+        {
+            animal.GetComponent<AnimalData>().IncreaseLevel();
+            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
+        }
+    }
+    private bool CanUpgradeAnimal()
+    {
+        if (animal != null)
+        {
+            AnimalData monsterData = animal.GetComponent<AnimalData>();
+            AnimalLevel nextLevel = monsterData.GetNextLevel();
+            if (nextLevel != null)
+            {
+                return gameManager.Food >= nextLevel.cost;
+            }
+        }
+        return false;
     }
 }

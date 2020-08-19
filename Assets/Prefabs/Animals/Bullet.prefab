@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 320233408721120875}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,4 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Target: {fileID: 9048417960854291206, guid: f4dcb1be928ed91459f6a4c4a6290fdb, type: 3}
+  AttackSpeed: 0
+  AttackDamage: 25
+  AttackRange: 0
+  Target: {fileID: 7412831876864632325, guid: 9e2a43481ce80064196c700e3f28939a, type: 3}

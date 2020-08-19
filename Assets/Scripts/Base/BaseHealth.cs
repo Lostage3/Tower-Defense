@@ -33,7 +33,7 @@ public class BaseHealth : MonoBehaviour
         else
         {
             Destroy(transform.parent.gameObject);
-            Death.text = "You Lose";
+            Death.text = "Verloren";
             
         }
     }

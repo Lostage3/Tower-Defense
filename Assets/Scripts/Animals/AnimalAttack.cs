@@ -5,6 +5,9 @@ using UnityEngine;
 public class AnimalAttack : MonoBehaviour
 {
     [SerializeField] float speed = 10;
+    public float AttackSpeed;
+    public int AttackDamage;
+    public float AttackRange;
 
     public Transform Target;
     private void FixedUpdate()
@@ -24,9 +27,15 @@ public class AnimalAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider co)
     {
-       
-            
+        if(co == Target)
+        {
             Destroy(gameObject);
-        
+        }
+        Enemy enemy = co.GetComponent<Enemy>();
+        if (co.CompareTag("Enemy"))
+        {
+            enemy.DecreaseHealth(AttackDamage);
+            Destroy(gameObject);
+        }
     }
 }
