@@ -6,7 +6,10 @@ public class AnimalPlace : MonoBehaviour
 {
     public GameObject AnimalPrefab;
     GameObject animal;
-   
+
+    public GameObject Ele;
+    public GameObject Gir;
+    public GameObject Leo;
 
     private GameManagerBehaviour gameManager;
 
@@ -26,8 +29,11 @@ public class AnimalPlace : MonoBehaviour
     {
         if (CanPlaceAnimal())
         {
-            animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
-            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
+            Ele.SetActive(true);
+            Gir.SetActive(true);
+            Leo.SetActive(true);
+            //animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
+            //gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
         else if (CanUpgradeAnimal())
         {

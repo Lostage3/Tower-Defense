@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManagerBehaviour : MonoBehaviour
 {
+    public GameObject Base;
     public Text FoodLabel;
     private int food;
     public int Food
@@ -20,7 +21,6 @@ public class GameManagerBehaviour : MonoBehaviour
         }
     }
     public Text waveLabel;
-    public GameObject nextWaveLabel;
     public bool gameOver = false;
     private int wave;
     public int Wave
@@ -54,6 +54,7 @@ public class GameManagerBehaviour : MonoBehaviour
             if (health <= 0 && !gameOver)
             {
                 gameOver = true;
+                Base.SetActive(false);
                 WinText.text = ("Verloren");
             }
             
