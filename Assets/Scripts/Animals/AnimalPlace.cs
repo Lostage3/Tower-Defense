@@ -11,11 +11,17 @@ public class AnimalPlace : MonoBehaviour
     public GameObject Gir;
     public GameObject Leo;
 
+    ElePlace eP;
+    GirPlace gP;
+    LeoPlace lP;
+
     private GameManagerBehaviour gameManager;
 
     private void Start()
     {
-        
+        eP = GetComponentInChildren<ElePlace>();
+        gP = GetComponentInChildren<GirPlace>();
+        lP = GetComponentInChildren<LeoPlace>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
@@ -32,6 +38,10 @@ public class AnimalPlace : MonoBehaviour
             Ele.SetActive(true);
             Gir.SetActive(true);
             Leo.SetActive(true);
+
+            animal = eP.animal;
+            animal = gP.animal;
+            animal = lP.animal;
             //animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
             //gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }

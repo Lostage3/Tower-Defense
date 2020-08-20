@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5303401164373132371}
   - component: {fileID: 2616612711109016050}
   - component: {fileID: 4237301047678601676}
+  - component: {fileID: 4519069363097398383}
   m_Layer: 0
   m_Name: "L\xF6we"
   m_TagString: Untagged
@@ -93,6 +94,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4519069363097398383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741812360428584821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099e3e142f7f87142afa49c10181995b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalPrefab: {fileID: 5630495265786184913, guid: 31ecca11d8d32394c87850c06864992b,
+    type: 3}
+  animal: {fileID: 0}
+  Ele: {fileID: 6896316476987467465}
+  Gir: {fileID: 8437187933619195818}
+  Leo: {fileID: 741812360428584821}
 --- !u!1 &6896316476987467465
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +124,7 @@ GameObject:
   - component: {fileID: 4237817093216652559}
   - component: {fileID: 2352370629334676459}
   - component: {fileID: 8756301850868920745}
+  - component: {fileID: 1128187863440097757}
   m_Layer: 0
   m_Name: Elefant
   m_TagString: Untagged
@@ -186,6 +206,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1128187863440097757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896316476987467465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8fb2a4476d0b740b6dc3a840dec880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalPrefab: {fileID: 7066440994292664462, guid: 728653dbf98c5ea4a9edcb5503d0b18c,
+    type: 3}
+  animal: {fileID: 0}
+  Ele: {fileID: 6896316476987467465}
+  Gir: {fileID: 8437187933619195818}
+  Leo: {fileID: 741812360428584821}
 --- !u!1 &8158237285984980051
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +350,7 @@ GameObject:
   - component: {fileID: 3052931403414766289}
   - component: {fileID: 204450215698668025}
   - component: {fileID: 863004758318818149}
+  - component: {fileID: 1092011802199709333}
   m_Layer: 0
   m_Name: Giraffe
   m_TagString: Untagged
@@ -393,3 +432,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1092011802199709333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437187933619195818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1d55fa29ea7e241b8a0d3ed9025f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalPrefab: {fileID: 9050479741840544313, guid: 9b44d53c7c9f9ba409ceb924ac2433f3,
+    type: 3}
+  animal: {fileID: 0}
+  Ele: {fileID: 6896316476987467465}
+  Gir: {fileID: 8437187933619195818}
+  Leo: {fileID: 741812360428584821}
