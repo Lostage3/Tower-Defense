@@ -1,46 +1,25 @@
 ﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
-{
-   
-    public EnemyPool Pool { get; set; } 
-    
-    public int health;
+{    
+    public int Health;
+    public int MaxHealth;
 
-    AnimalAttack attack;
-
-    private void Update()
+    private void Start()
     {
-        if(health <= 0)
-        {
-            Pool.ReturnToPool(this);
-            this.health = 100;
-        }
-    }
+        Health = MaxHealth;
+    } 
+
+   
 
     public void DecreaseHealth(int amount)
     {
-        if (health > 0)
+        if (Health > 0)
         {
-            health -= amount;
+            Health -= amount;
         }
-        else
-        {
-            Pool.ReturnToPool(this);
-            //health = 100;
-        }
-    }
-
-    void OnTriggerEnter(Collider co)
-
-    {
-        if (co.name == "Base")
-        {
-            Pool.ReturnToPool(this);
-
-        }
-       
-    }
+        
+    } 
 }
 
 

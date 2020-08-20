@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &4405026479836491514
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9050479741840544313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8167465452428816232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,6 +80,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 16e16e9f05539304d9b5e9bd18bd037e, type: 2}
+    - target: {fileID: -7029948723529949830, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4002159107561797417, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 882129737928793925, guid: 4d13f06c133b220459450a5ea511539d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -77,6 +105,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Girfaffekind Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683427600780654761, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833896207402103269, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 4d13f06c133b220459450a5ea511539d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7202271454713460447, guid: 4d13f06c133b220459450a5ea511539d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -84,3 +137,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 16e16e9f05539304d9b5e9bd18bd037e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d13f06c133b220459450a5ea511539d, type: 3}
+--- !u!1 &9050479741840544313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d13f06c133b220459450a5ea511539d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8167465452428816232}
+  m_PrefabAsset: {fileID: 0}

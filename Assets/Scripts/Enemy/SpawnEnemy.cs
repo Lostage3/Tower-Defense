@@ -68,7 +68,7 @@ public class SpawnEnemy : MonoBehaviour
         else
         {
             gameManager.gameOver = true;
-            WinText.text = ("Verloren");
+            WinText.text = ("Gewonnen");
         }
     }
 }

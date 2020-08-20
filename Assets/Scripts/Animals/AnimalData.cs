@@ -7,6 +7,8 @@ public class AnimalLevel
 {
     public int cost;
     public GameObject visualization;
+    public GameObject bullet;
+    public float fireRate;
 }
 
 public class AnimalData : MonoBehaviour

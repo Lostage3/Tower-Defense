@@ -26,7 +26,7 @@ public class AnimalPlace : MonoBehaviour
     {
         if (CanPlaceAnimal())
         {
-            animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
+            animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
             gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
         else if (CanUpgradeAnimal())
