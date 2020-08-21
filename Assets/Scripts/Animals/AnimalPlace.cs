@@ -5,15 +5,15 @@ using UnityEngine;
 public class AnimalPlace : MonoBehaviour
 {
     public GameObject ElePrefab;
-    public GameObject GirPrefab;
-    public GameObject LeoPrefab;
-    GameObject ele;
-    GameObject gir;
-    GameObject leo;
+   // public GameObject GirPrefab;
+   // public GameObject LeoPrefab;
 
-    public GameObject EleButton;
-    public GameObject GirButton;
-    public GameObject Leobutton;
+    GameObject ele;
+    // GameObject gir;
+    // GameObject leo;
+
+    bool eleBool;
+  
 
     private GameManagerBehaviour gameManager;
 
@@ -46,6 +46,9 @@ public class AnimalPlace : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
+       
+
+
         if (CanPlaceEle())
         {
             ele = Instantiate(ElePrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);

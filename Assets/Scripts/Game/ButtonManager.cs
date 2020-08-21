@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject TerrainPrefab;
+
+    AnimalPlace animalPlace;
+
+    private void Start()
     {
-        
+        animalPlace = TerrainPrefab.GetComponent<AnimalPlace>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
+
+
 }
