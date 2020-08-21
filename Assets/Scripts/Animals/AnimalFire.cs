@@ -41,8 +41,8 @@ public class AnimalFire : MonoBehaviour
             
             Vector3 direction = gameObject.transform.position - target.transform.position;
             gameObject.transform.rotation = Quaternion.AngleAxis(
-                Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
-                new Vector3(0, 0, 1));
+                Mathf.Atan2(direction.y, direction.x) * -180 / Mathf.PI,
+                new Vector3(0, 1, 0));
         }
     }
 
@@ -80,9 +80,6 @@ public class AnimalFire : MonoBehaviour
         
         Vector3 startPosition = gameObject.transform.position;
         Vector3 targetPosition = target.transform.position;
-        startPosition.z = bulletPrefab.transform.position.z;
-        targetPosition.z = bulletPrefab.transform.position.z;
-
         
         GameObject newBullet = Instantiate(bulletPrefab,transform.position,Quaternion.identity);
         newBullet.transform.position = startPosition;
@@ -90,8 +87,5 @@ public class AnimalFire : MonoBehaviour
         bulletComp.target = target.gameObject;
         bulletComp.startPosition = startPosition;
         bulletComp.targetPosition = targetPosition;
-
-        
-        
     }
 }

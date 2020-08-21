@@ -9,7 +9,7 @@ public class BulletBehavior : MonoBehaviour
     public GameObject target;
     public Vector3 startPosition;
     public Vector3 targetPosition;
-    public Enemy enemy;
+    Enemy enemy;
 
     private float distance;
     private float startTime;
@@ -22,6 +22,7 @@ public class BulletBehavior : MonoBehaviour
         distance = Vector3.Distance(startPosition, targetPosition);
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManagerBehaviour>();
+        enemy = target.GetComponent<Enemy>();
     }
     private void Update()
     {
@@ -33,16 +34,14 @@ public class BulletBehavior : MonoBehaviour
         {
             if (target != null)
             {
-                
-
                 if (enemy.Health > 0)
                 {
                     enemy.DecreaseHealth(damage);
                 }
                 else
-                { 
+                {
+                    gameManager.Food += 15;
                     Destroy(target);
-                    gameManager.Food += 10;
                 }
             }
             Destroy(gameObject);

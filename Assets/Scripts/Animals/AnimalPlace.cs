@@ -4,58 +4,37 @@ using UnityEngine;
 
 public class AnimalPlace : MonoBehaviour
 {
-    public GameObject AnimalPrefab;
-    GameObject animal;
+    public GameObject ElePrefab;
+    public GameObject GirPrefab;
+    public GameObject LeoPrefab;
+    GameObject ele;
+    GameObject gir;
+    GameObject leo;
 
-    public GameObject Ele;
-    public GameObject Gir;
-    public GameObject Leo;
-
-    ElePlace eP;
-    GirPlace gP;
-    LeoPlace lP;
+    public GameObject EleButton;
+    public GameObject GirButton;
+    public GameObject Leobutton;
 
     private GameManagerBehaviour gameManager;
 
     private void Start()
     {
-        eP = GetComponentInChildren<ElePlace>();
-        gP = GetComponentInChildren<GirPlace>();
-        lP = GetComponentInChildren<LeoPlace>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
-    private bool CanPlaceAnimal()
+    private bool CanPlaceEle()
     {
-        int cost = AnimalPrefab.GetComponent<AnimalData>().levels[0].cost;
-        return animal == null && gameManager.Food >= cost;
+        int cost = ElePrefab.GetComponent<AnimalData>().levels[0].cost;
+
+        return ele == null && gameManager.Food >= cost;
+
     }
 
-    private void OnMouseUpAsButton()
+    private bool CanUpgradeEle()
     {
-        if (CanPlaceAnimal())
+        if (ele != null)
         {
-            Ele.SetActive(true);
-            Gir.SetActive(true);
-            Leo.SetActive(true);
-
-            animal = eP.animal;
-            animal = gP.animal;
-            animal = lP.animal;
-            //animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
-            //gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
-        }
-        else if (CanUpgradeAnimal())
-        {
-            animal.GetComponent<AnimalData>().IncreaseLevel();
-            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
-        }
-    }
-    private bool CanUpgradeAnimal()
-    {
-        if (animal != null)
-        {
-            AnimalData monsterData = animal.GetComponent<AnimalData>();
+            AnimalData monsterData = ele.GetComponent<AnimalData>();
             AnimalLevel nextLevel = monsterData.GetNextLevel();
             if (nextLevel != null)
             {
@@ -64,4 +43,20 @@ public class AnimalPlace : MonoBehaviour
         }
         return false;
     }
+
+    private void OnMouseUpAsButton()
+    {
+        if (CanPlaceEle())
+        {
+            ele = Instantiate(ElePrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
+
+            gameManager.Food -= ele.GetComponent<AnimalData>().CurrentLevel.cost;
+        }
+        else if (CanUpgradeEle())
+        {
+            ele.GetComponent<AnimalData>().IncreaseLevel();
+            gameManager.Food -= ele.GetComponent<AnimalData>().CurrentLevel.cost;
+        }
+    }
+
 }

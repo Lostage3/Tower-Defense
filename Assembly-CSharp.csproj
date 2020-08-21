@@ -66,13 +66,11 @@
     <Compile Include="Assets\Scripts\Animals\AnimalFire.cs" />
     <Compile Include="Assets\Scripts\Animals\AnimalPlace.cs" />
     <Compile Include="Assets\Scripts\Animals\BulletBehavior.cs" />
-    <Compile Include="Assets\Scripts\Animals\ElePlace.cs" />
-    <Compile Include="Assets\Scripts\Animals\GirPlace.cs" />
-    <Compile Include="Assets\Scripts\Animals\LeoPlace.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDestructionDelegate.cs" />
     <Compile Include="Assets\Scripts\Enemy\MoveEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpawnEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameManagerBehaviour.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
