@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class AnimalPlace : MonoBehaviour
 {
-    public GameObject ElePrefab;
-   // public GameObject GirPrefab;
-   // public GameObject LeoPrefab;
-
-    GameObject ele;
-    // GameObject gir;
-    // GameObject leo;
-
-    bool eleBool;
+    public GameObject AnimalPrefab;
   
+    GameObject animal;
 
     private GameManagerBehaviour gameManager;
 
@@ -22,19 +15,19 @@ public class AnimalPlace : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
-    private bool CanPlaceEle()
+    private bool CanPlaceAnimal()
     {
-        int cost = ElePrefab.GetComponent<AnimalData>().levels[0].cost;
+        int cost = AnimalPrefab.GetComponent<AnimalData>().levels[0].cost;
 
-        return ele == null && gameManager.Food >= cost;
+        return animal == null && gameManager.Food >= cost;
 
     }
 
-    private bool CanUpgradeEle()
+    private bool CanUpgradeAnimal()
     {
-        if (ele != null)
+        if (animal != null)
         {
-            AnimalData monsterData = ele.GetComponent<AnimalData>();
+            AnimalData monsterData = animal.GetComponent<AnimalData>();
             AnimalLevel nextLevel = monsterData.GetNextLevel();
             if (nextLevel != null)
             {
@@ -46,19 +39,16 @@ public class AnimalPlace : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
-       
-
-
-        if (CanPlaceEle())
+        if (CanPlaceAnimal())
         {
-            ele = Instantiate(ElePrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
+            animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
 
-            gameManager.Food -= ele.GetComponent<AnimalData>().CurrentLevel.cost;
+            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
-        else if (CanUpgradeEle())
+        else if (CanUpgradeAnimal())
         {
-            ele.GetComponent<AnimalData>().IncreaseLevel();
-            gameManager.Food -= ele.GetComponent<AnimalData>().CurrentLevel.cost;
+            animal.GetComponent<AnimalData>().IncreaseLevel();
+            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
     }
 

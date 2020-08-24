@@ -73,6 +73,8 @@
     <Compile Include="Assets\Scripts\Game\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameManagerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Game\GirButton.cs" />
+    <Compile Include="Assets\Scripts\Game\LeoButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

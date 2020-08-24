@@ -6,14 +6,17 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject TerrainPrefab;
 
-    AnimalPlace animalPlace;
+    public GameObject ElePrefab;
 
+    AnimalPlace animalPlace;
+    
     private void Start()
     {
         animalPlace = TerrainPrefab.GetComponent<AnimalPlace>();
     }
 
-  
-
-
+    private void OnMouseUpAsButton()
+    {
+        animalPlace.AnimalPrefab = ElePrefab;
+    }
 }

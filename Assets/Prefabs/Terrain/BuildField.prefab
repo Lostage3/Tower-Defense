@@ -106,15 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318dd91ce0319d74fa84eaa5fe141b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElePrefab: {fileID: 7066440994292664462, guid: 728653dbf98c5ea4a9edcb5503d0b18c,
-    type: 3}
-  GirPrefab: {fileID: 4369431396724411303, guid: 11a166bd3c66a9b4e92288b49a38514c,
-    type: 3}
-  LeoPrefab: {fileID: 2331032801683158035, guid: bdc381a2b82c77740be381371271dac2,
-    type: 3}
-  EleButton: {fileID: 7023117969995697386, guid: 62f8b268426191b4f86e0da3e1c8e20e,
-    type: 3}
-  GirButton: {fileID: 8375811884490243286, guid: f45720c90e4f0ef44a8b2037f0b167df,
-    type: 3}
-  Leobutton: {fileID: 8074055814230612189, guid: 1f8d750bee3bc37449f21962d1f9d52e,
+  AnimalPrefab: {fileID: 7066440994292664462, guid: 728653dbf98c5ea4a9edcb5503d0b18c,
     type: 3}
