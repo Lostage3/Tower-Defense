@@ -1,12 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AnimalPlace : MonoBehaviour
 {
-    public GameObject AnimalPrefab;
-  
-    GameObject animal;
+    [SerializeField] AnimalType animalType;
+    public AnimalType AnimalType
+    {
+        get { return animalType; }
+        set
+        {
+            animalType = value;
+            Debug.Log(animalType);
+        }
+    }
+    public GameObject ElePrefab;
+    public GameObject GirPrefab;
+    public GameObject LeoPrefab;
+
+    GameObject curAnimal;
 
     private GameManagerBehaviour gameManager;
 
@@ -15,40 +25,96 @@ public class AnimalPlace : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
     }
 
-    private bool CanPlaceAnimal()
+    private bool CanPlaceAnimal(AnimalType animalType)
     {
-        int cost = AnimalPrefab.GetComponent<AnimalData>().levels[0].cost;
-
-        return animal == null && gameManager.Food >= cost;
-
+        int cost = 0;
+        switch (animalType)
+        {
+            case AnimalType.Ele:
+                cost = ElePrefab.GetComponent<AnimalData>().levels[0].cost;
+                return curAnimal == null && gameManager.Food >= cost;
+            case AnimalType.Gir:
+                cost = GirPrefab.GetComponent<AnimalData>().levels[0].cost;
+                return curAnimal == null && gameManager.Food >= cost;
+            case AnimalType.Leo:
+                cost = LeoPrefab.GetComponent<AnimalData>().levels[0].cost;
+                return curAnimal == null && gameManager.Food >= cost;
+            default:
+                return false;
+        }
     }
 
-    private bool CanUpgradeAnimal()
+    private bool CanUpgradeAnimal(AnimalType animalType)
     {
-        if (animal != null)
+        switch (animalType)
         {
-            AnimalData monsterData = animal.GetComponent<AnimalData>();
-            AnimalLevel nextLevel = monsterData.GetNextLevel();
-            if (nextLevel != null)
-            {
-                return gameManager.Food >= nextLevel.cost;
-            }
+            case AnimalType.Ele:
+                if (curAnimal != null)
+                {
+                    AnimalData eleData = curAnimal.GetComponent<AnimalData>();
+                    AnimalLevel nextLevel = eleData.GetNextLevel();
+                    if (nextLevel != null)
+                    {
+                        return gameManager.Food >= nextLevel.cost;
+                    }
+                }
+                break;
+            case AnimalType.Gir:
+                if (curAnimal != null)
+                {
+                    AnimalData girData = curAnimal.GetComponent<AnimalData>();
+                    AnimalLevel nextLevel = girData.GetNextLevel();
+                    if (nextLevel != null)
+                    {
+                        return gameManager.Food >= nextLevel.cost;
+                    }
+                }
+                break;
+            case AnimalType.Leo:
+                if (curAnimal != null)
+                {
+                    AnimalData leoData = curAnimal.GetComponent<AnimalData>();
+                    AnimalLevel nextLevel = leoData.GetNextLevel();
+                    if (nextLevel != null)
+                    {
+                        return gameManager.Food >= nextLevel.cost;
+                    }
+                }
+                break;
+            default:
+                return false;
         }
         return false;
     }
 
     private void OnMouseUpAsButton()
     {
-        if (CanPlaceAnimal())
+        print($"Animal Type is {AnimalType}");
+        GameObject prefab = null;
+        switch (AnimalType)
         {
-            animal = Instantiate(AnimalPrefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
-
-            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
+            case AnimalType.Ele:
+                prefab = ElePrefab;
+                break;
+            case AnimalType.Gir:
+                prefab = GirPrefab;
+                break;
+            case AnimalType.Leo:
+                prefab = LeoPrefab;
+                break;
+            default:
+                break;
         }
-        else if (CanUpgradeAnimal())
+
+        if (CanPlaceAnimal(AnimalType))
         {
-            animal.GetComponent<AnimalData>().IncreaseLevel();
-            gameManager.Food -= animal.GetComponent<AnimalData>().CurrentLevel.cost;
+            curAnimal = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z), Quaternion.identity);
+            gameManager.Food -= curAnimal.GetComponent<AnimalData>().CurrentLevel.cost;
+        }
+        else if (CanUpgradeAnimal(AnimalType))
+        {
+            curAnimal.GetComponent<AnimalData>().IncreaseLevel();
+            gameManager.Food -= curAnimal.GetComponent<AnimalData>().CurrentLevel.cost;
         }
     }
 

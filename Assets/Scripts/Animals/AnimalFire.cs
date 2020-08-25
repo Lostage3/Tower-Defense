@@ -41,7 +41,7 @@ public class AnimalFire : MonoBehaviour
             
             Vector3 direction = gameObject.transform.position - target.transform.position;
             gameObject.transform.rotation = Quaternion.AngleAxis(
-                Mathf.Atan2(direction.y, direction.x) * -180 / Mathf.PI,
+                Mathf.Atan2(direction.z, direction.x) * -180 / Mathf.PI,
                 new Vector3(0, 1, 0));
         }
     }

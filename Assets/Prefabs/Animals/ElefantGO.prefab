@@ -212,12 +212,12 @@ MonoBehaviour:
     visualization: {fileID: 3559574035961742226}
     bullet: {fileID: 1911854186902872521, guid: 966bbb75cbcda5949974a302424b1f46,
       type: 3}
-    fireRate: 3
-  - cost: 25
+    fireRate: 2
+  - cost: 30
     visualization: {fileID: 30072802849305834}
     bullet: {fileID: 1792457618535794104, guid: 25df98f0c9bea9d47b9757a08c1ef675,
       type: 3}
-    fireRate: 3
+    fireRate: 2
 --- !u!114 &809797853713012122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +242,7 @@ AudioSource:
   m_GameObject: {fileID: 7066440994292664462}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8118431221101884381, guid: ce31b742a18ff73418e743427b157bce,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

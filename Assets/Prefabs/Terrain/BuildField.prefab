@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8158237285984980051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 1.25, z: 3}
-  m_LocalScale: {x: 5, y: 2.5, z: 5}
+  m_LocalScale: {x: 5, y: 0.2, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158237285984980051}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8158237285984980048
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9aa1ed834c14a6b4b8b2f8c3c460c57f, type: 2}
+  - {fileID: 2100000, guid: 1b7cbec9828ac2249b57d36d54a38162, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9077331435164687979
 MonoBehaviour:
@@ -106,5 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318dd91ce0319d74fa84eaa5fe141b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalPrefab: {fileID: 7066440994292664462, guid: 728653dbf98c5ea4a9edcb5503d0b18c,
+  ElePrefab: {fileID: 7066440994292664462, guid: 728653dbf98c5ea4a9edcb5503d0b18c,
     type: 3}
+  GirPrefab: {fileID: 4369431396724411303, guid: 11a166bd3c66a9b4e92288b49a38514c,
+    type: 3}
+  LeoPrefab: {fileID: 2331032801683158035, guid: bdc381a2b82c77740be381371271dac2,
+    type: 3}
+  elePlace: 0
+  girPlace: 0
+  leoPlace: 1

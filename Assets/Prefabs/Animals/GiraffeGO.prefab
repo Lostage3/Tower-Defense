@@ -66,12 +66,12 @@ MonoBehaviour:
     visualization: {fileID: 5046589141129636220}
     bullet: {fileID: 6444501604852337030, guid: 71bcb4b011c9af7449def06249497616,
       type: 3}
-    fireRate: 2
-  - cost: 15
+    fireRate: 1.5
+  - cost: 20
     visualization: {fileID: 8337374496419700309}
     bullet: {fileID: 2034664742032661927, guid: 553308659bf0fbf4db9822706b7ca248,
       type: 3}
-    fireRate: 2
+    fireRate: 1.5
 --- !u!114 &3201663151910001360
 MonoBehaviour:
   m_ObjectHideFlags: 0
