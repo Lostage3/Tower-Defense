@@ -107,12 +107,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 10
+  - cost: 5
     visualization: {fileID: 8798856794499308010}
     bullet: {fileID: 1507366866128851933, guid: 2bb8d48fa8fe11343b93bce3e634f15c,
       type: 3}
     fireRate: 1
-  - cost: 20
+  - cost: 15
     visualization: {fileID: 2293544456475467486}
     bullet: {fileID: 886455617803076256, guid: 50d5110e818e14248b0d1bfc20b0f7be, type: 3}
     fireRate: 1

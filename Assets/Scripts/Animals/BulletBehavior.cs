@@ -40,7 +40,7 @@ public class BulletBehavior : MonoBehaviour
                 }
                 else
                 {
-                    gameManager.Food += 15;
+                    gameManager.Food += 5;
                     Destroy(target);
                 }
             }
