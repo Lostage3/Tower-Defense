@@ -474,9 +474,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Das hier sind deine Tiere!\nDer starke Elefant, die lange Giraffe und
-    der schnelle L\xF6we. Im Spiel siehst du ihre Kr\xE4fte und Futterkosten. Wenn
-    du einen benutzen willst musst du seine Karte w\xE4hlen und dann auf eines der
-    schwarzen Felder dr\xFCcken, dann erscheint das Tier."
+    der schnelle L\xF6we. Im Spiel siehst du ihre Kr\xE4fte und wie viel Futter sie
+    brauchen. Wenn du einen benutzen willst, musst du seine Karte w\xE4hlen und 
+    auf eines der schwarzen Felder dr\xFCcken, dann erscheint das Tier."
 --- !u!1 &527568217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 1919455978}
   - component: {fileID: 1919455977}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TextFeld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
